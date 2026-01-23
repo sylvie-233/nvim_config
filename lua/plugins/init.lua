@@ -15,4 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- 启动插件
 require("lazy").setup({
+    { import = "plugins.snacks" },
+    { import = "plugins.noice" },
+    { import = "plugins.mini_move" },
 })

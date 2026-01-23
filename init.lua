@@ -23,3 +23,6 @@ vim.api.nvim_set_keymap("n", "<leader>t", "<Cmd>terminal<CR>", { silent = true }
 require("plugins")
 
 -- 记得安装 JetBrainsMono Nerd Font字体，并设置给终端
+-- 安装fd、rg文件查找工具，无需配置
+    -- winget install sharkdp.fd
+    -- winget install BurntSushi.ripgrep.MSVC
