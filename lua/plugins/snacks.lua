@@ -10,10 +10,16 @@ return {{
         terminal = {
             enabled = true
         },
+        input = {
+            enabled = true
+        },
         picker = {
             enabled = true
         },
         notifier = {
+            enabled = true
+        },
+        statusline = {
             enabled = true
         },
         bufdelete = {
