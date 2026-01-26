@@ -13,6 +13,7 @@ return {
         "rust_analyzer",
         "pyright",
         "clangd",
+        "gopls",
       },
       automatic_installation = true,
     },
