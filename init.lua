@@ -20,6 +20,20 @@ vim.api.nvim_set_keymap("n", "<C-h>", "<Cmd>BufferLineCyclePrev<CR>", { silent =
 vim.api.nvim_set_keymap("n", "<C-l>", "<Cmd>BufferLineCycleNext<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "<leader>t", "<Cmd>terminal<CR>", { silent = true })
 
+vim.keymap.set("n", "<leader>dl", vim.diagnostic.open_float, { desc = "Line diagnostics" })
+vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next)
+vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "<leader>da", function()
+  for _, win in ipairs(vim.fn.getwininfo()) do
+    if win.quickfix == 1 then
+      vim.cmd("cclose")
+      return
+    end
+  end
+  vim.diagnostic.setqflist()
+  vim.cmd("copen")
+end, { desc = "Toggle diagnostic quickfix" })
+
 -- 初始化插件系统
 require("plugins")
 
