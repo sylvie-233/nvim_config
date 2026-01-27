@@ -18,6 +18,7 @@ require("lazy").setup({
     { import = "plugins.mason" },
     { import = "plugins.lsp" },
     { import = "plugins.cmp" },
+    { import = "plugins.dap" },
     { import = "plugins.snacks" },
     { import = "plugins.noice" },
     { import = "plugins.nvim-tree" },
