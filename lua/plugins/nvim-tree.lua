@@ -20,6 +20,9 @@ return {
                 end
 
                 -- 文件操作快捷键
+                vim.keymap.set("n", "c", api.fs.copy.node, opts("Copy"))
+                vim.keymap.set("n", "x", api.fs.cut, opts("Cut"))
+                vim.keymap.set("n", "p", api.fs.paste, opts("Paste"))
                 vim.keymap.set("n", "a", api.fs.create, opts("Create"))
                 vim.keymap.set("n", "r", api.fs.rename, opts("Rename"))
                 vim.keymap.set("n", "d", api.fs.remove, opts("Delete"))
