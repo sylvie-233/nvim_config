@@ -1,34 +1,44 @@
 return {
-  {
-    "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
-    dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "L3MON4D3/LuaSnip",
-      "saadparwaiz1/cmp_luasnip",
-    },
-    opts = function(_, opts)
-      local cmp = require("cmp")
-      cmp.setup {
-        snippet = {
-          expand = function(args)
-            require("luasnip").lsp_expand(args.body)
-          end,
+    {
+        "saghen/blink.cmp",
+        event = "InsertEnter",
+        dependencies = {
+            "L3MON4D3/LuaSnip",
         },
-        mapping = cmp.mapping.preset.insert({
-          ["<Tab>"] = cmp.mapping.select_next_item(),
-          ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-          ["<CR>"] = cmp.mapping.confirm({ select = true }),
-        }),
-        sources = cmp.config.sources({
-          { name = "nvim_lsp" },
-          { name = "path" },
-          { name = "buffer" },
-          { name = "luasnip" },
-        }),
-      }
-    end,
-  },
+        opts = {
+            snippets = {
+                expand = function(snippet)
+                    require("luasnip").lsp_expand(snippet)
+                end,
+            },
+
+            completion = {
+                accept = {
+                    auto_brackets = { enabled = true },
+                },
+                menu = {
+                    border = "rounded",
+                },
+                documentation = {
+                    auto_show = true,
+                },
+            },
+
+            sources = {
+                default = {
+                    "lsp",
+                    "path",
+                    "buffer",
+                    "snippets",
+                },
+            },
+
+            keymap = {
+                ["<Tab>"] = { "select_next", "fallback" },
+                ["<S-Tab>"] = { "select_prev", "fallback" },
+                ["<CR>"] = { "accept", "fallback" },
+                ["<C-Space>"] = { "show" },
+            },
+        },
+    },
 }

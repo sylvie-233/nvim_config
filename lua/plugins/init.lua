@@ -15,16 +15,17 @@ vim.opt.rtp:prepend(lazypath)
 
 -- 启动插件
 require("lazy").setup({
-    { import = "plugins.mason" },
-    { import = "plugins.lsp" },
-    { import = "plugins.cmp" },
-    { import = "plugins.dap" },
-    { import = "plugins.snacks" },
-    { import = "plugins.noice" },
-    { import = "plugins.nvim-tree" },
-    { import = "plugins.bufferline" },
-    { import = "plugins.theme" },
-    { import = "plugins.mini_move" },
-    { import = "plugins.nvim-comment" },
-    { import = "plugins.nvim-autopairs" },
+    { import = "plugins.lazydev" },        -- nvim配置开发
+    { import = "plugins.mason" },          -- Mason lsp安装
+    { import = "plugins.lsp" },            -- lsp 内置
+    { import = "plugins.cmp" },            -- 代码提示
+    { import = "plugins.dap" },            -- 调试
+    { import = "plugins.snacks" },         -- 工具箱
+    { import = "plugins.noice" },          -- UI美化
+    { import = "plugins.nvim-tree" },      -- 文件树
+    { import = "plugins.bufferline" },     -- tab栏
+    { import = "plugins.theme" },          -- 主题
+    { import = "plugins.mini_move" },      -- 代码移动
+    { import = "plugins.nvim-comment" },   -- 代码注释
+    { import = "plugins.nvim-autopairs" }, -- 括号匹配
 })

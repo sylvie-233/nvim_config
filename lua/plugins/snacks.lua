@@ -14,7 +14,10 @@ return {{
             enabled = true
         },
         statusline = { -- 状态栏模块
-            enabled = true
+            enabled = true,
+            global = true,
+            icons = true,
+            style = "modern",
         },
         bufdelete = { -- 缓冲区删除模块
             enabled = true

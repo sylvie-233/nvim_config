@@ -6,10 +6,10 @@ return {
         require("bufferline").setup({
             options = {
                 diagnostics = "nvim_lsp",
-                offsets = {{
+                offsets = { {
                     filetype = "NvimTree",
                     text = "Explorer"
-                }}
+                } }
             }
         })
     end
