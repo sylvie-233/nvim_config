@@ -14,6 +14,7 @@ return {
                 "pyright",
                 "clangd",
                 "gopls",
+                "ts_ls",
             },
             automatic_installation = true, -- 开启自动安装
         },
