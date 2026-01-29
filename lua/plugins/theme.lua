@@ -1,6 +1,6 @@
 return {
-    "ful1e5/onedark.nvim",
-    config = function()
-        require("onedark").setup()
-    end
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
 }
