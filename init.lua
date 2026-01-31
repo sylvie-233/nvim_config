@@ -7,8 +7,8 @@ vim.opt.relativenumber = true
 vim.opt.termguicolors  = true
 vim.opt.clipboard      = "unnamedplus" -- 把 Neovim 的 + 寄存器绑定到系统剪贴板（让 " 默认映射到 +）
 vim.opt.expandtab      = true
-vim.opt.tabstop        = 4
-vim.opt.shiftwidth     = 4
+vim.opt.tabstop        = 2
+vim.opt.shiftwidth     = 2
 vim.opt.shell          = "pwsh" -- 内置终端使用powershell
 vim.opt.shellcmdflag   = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
 vim.opt.shellredir     = "2>&1 | Out-File -Encoding UTF8 %s"
@@ -39,7 +39,7 @@ vim.keymap.set("n", "<C-p>", function()
     require("snacks").picker.files()
 end, { desc = "Find Files (Ctrl+P)" })
 vim.keymap.set("n", "<C-f>", function()
-  require("snacks").picker.grep()
+    require("snacks").picker.grep()
 end, { desc = "Search text in project" })
 vim.keymap.set("n", "<leader>sd", function()
     require("snacks").dashboard.open()
@@ -62,9 +62,9 @@ end, { desc = "Toggle diagnostic quickfix" })
 require("plugins")
 
 -- 使用theme主题配色
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd [[colorscheme tokyonight]]
 
 -- 记得安装 JetBrainsMono Nerd Font字体，并设置给终端
 -- 安装fd、rg文件查找工具，无需配置
-    -- winget install sharkdp.fd
-    -- winget install BurntSushi.ripgrep.MSVC
+-- winget install sharkdp.fd
+-- winget install BurntSushi.ripgrep.MSVC
