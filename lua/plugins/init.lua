@@ -20,6 +20,7 @@ require("lazy").setup({
     { import = "plugins.lsp" },            -- lsp 内置
     { import = "plugins.cmp" },            -- 代码提示
     { import = "plugins.dap" },            -- 调试
+    { import = "plugins.conform" },        -- 格式化器
     { import = "plugins.snacks" },         -- 工具箱
     { import = "plugins.noice" },          -- UI美化
     { import = "plugins.nvim-tree" },      -- 文件树

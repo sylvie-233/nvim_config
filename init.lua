@@ -59,6 +59,9 @@ end, { desc = "Search text in project" })
 vim.keymap.set("n", "<leader>sd", function()
   require("snacks").dashboard.open()
 end, { desc = "Snacks Dashboard" })
+vim.keymap.set("n", "<leader>F", function()
+  require("conform").format()  -- 调用格式化命令工具
+end, { desc = "Format (conform)" })
 vim.keymap.set("n", "<leader>fm", function()  -- 格式化代码
   vim.lsp.buf.format({ async = true })
 end, { desc = "Format file" })
