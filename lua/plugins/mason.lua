@@ -15,6 +15,8 @@ return {
                 "clangd",
                 "gopls",
                 "ts_ls",
+                "omnisharp",
+                "ruff",
             },
             automatic_installation = true, -- 开启自动安装
         },
