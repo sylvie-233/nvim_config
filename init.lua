@@ -65,6 +65,9 @@ end, { desc = "Format (conform)" })
 vim.keymap.set("n", "<leader>fm", function()  -- 格式化代码
   vim.lsp.buf.format({ async = true })
 end, { desc = "Format file" })
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {
+  desc = "Code Action"
+})
 vim.keymap.set("n", "K", function()
   vim.lsp.buf.hover({
     border = "rounded",
