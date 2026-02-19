@@ -23,46 +23,46 @@ vim.api.nvim_set_keymap('i', 'jk', '<Esc>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>1", "<Cmd>BufferLineGoToBuffer 1<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>2", "<Cmd>BufferLineGoToBuffer 2<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>w", "<Cmd>BufferLinePickClose<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>W", function()  -- 关闭右侧所有buffer
+vim.keymap.set("n", "<leader>W", function() -- 关闭右侧所有buffer
   local current = vim.api.nvim_get_current_win()
   require("bufferline").close_in_direction("right", current)
 end, { desc = "Close all buffers to the right" })
 vim.api.nvim_set_keymap("n", "<leader>t", "<Cmd>terminal<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "<C-h>", "<Cmd>BufferLineCyclePrev<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "<C-l>", "<Cmd>BufferLineCycleNext<CR>", { silent = true })
-vim.keymap.set("n", "<C-j>", function()          -- 切换下一个窗口
-    local wins = vim.api.nvim_tabpage_list_wins(0) -- 获取当前 tab 所有窗口
-    local cur = vim.api.nvim_get_current_win()     -- 当前窗口
-    for i, w in ipairs(wins) do
-        if w == cur then
-            vim.api.nvim_set_current_win(wins[i % #wins + 1])
-            return
-        end
+vim.keymap.set("n", "<C-j>", function()            -- 切换下一个窗口
+  local wins = vim.api.nvim_tabpage_list_wins(0)   -- 获取当前 tab 所有窗口
+  local cur = vim.api.nvim_get_current_win()       -- 当前窗口
+  for i, w in ipairs(wins) do
+    if w == cur then
+      vim.api.nvim_set_current_win(wins[i % #wins + 1])
+      return
     end
+  end
 end, { desc = "Next window" })
 vim.keymap.set("n", "<C-k>", function() -- 切换上一个窗口
-    local wins = vim.api.nvim_tabpage_list_wins(0)
-    local cur = vim.api.nvim_get_current_win()
-    for i, w in ipairs(wins) do
-        if w == cur then
-            vim.api.nvim_set_current_win(wins[(i - 2) % #wins + 1])
-            return
-        end
+  local wins = vim.api.nvim_tabpage_list_wins(0)
+  local cur = vim.api.nvim_get_current_win()
+  for i, w in ipairs(wins) do
+    if w == cur then
+      vim.api.nvim_set_current_win(wins[(i - 2) % #wins + 1])
+      return
     end
+  end
 end, { desc = "Previous window" })
-vim.keymap.set("n", "<C-p>", function()  -- 文件选择器
+vim.keymap.set("n", "<C-p>", function() -- 文件选择器
   require("snacks").picker.files()
 end, { desc = "Find Files (Ctrl+P)" })
-vim.keymap.set("n", "<C-f>", function()  -- 文本查找器
+vim.keymap.set("n", "<C-f>", function() -- 文本查找器
   require("snacks").picker.grep()
 end, { desc = "Search text in project" })
 vim.keymap.set("n", "<leader>sd", function()
   require("snacks").dashboard.open()
 end, { desc = "Snacks Dashboard" })
 vim.keymap.set("n", "<leader>F", function()
-  require("conform").format()  -- 调用格式化命令工具
+  require("conform").format()                -- 调用格式化命令工具
 end, { desc = "Format (conform)" })
-vim.keymap.set("n", "<leader>fm", function()  -- 格式化代码
+vim.keymap.set("n", "<leader>fm", function() -- 格式化代码
   vim.lsp.buf.format({ async = true })
 end, { desc = "Format file" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {

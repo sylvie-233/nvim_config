@@ -1,4 +1,4 @@
-return {
+eturn {
   "stevearc/conform.nvim",
   event = "BufWritePre",
   opts = {
@@ -7,3 +7,4 @@ return {
     },
   },
 }
+
