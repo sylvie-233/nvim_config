@@ -28,32 +28,16 @@ vim.keymap.set("n", "<leader>W", function() -- 关闭右侧所有buffer
   require("bufferline").close_in_direction("right", current)
 end, { desc = "Close all buffers to the right" })
 vim.api.nvim_set_keymap("n", "<leader>t", "<Cmd>terminal<CR>", { silent = true })
-vim.api.nvim_set_keymap("n", "<C-h>", "<Cmd>BufferLineCyclePrev<CR>", { silent = true })
-vim.api.nvim_set_keymap("n", "<C-l>", "<Cmd>BufferLineCycleNext<CR>", { silent = true })
-vim.keymap.set("n", "<C-j>", function()            -- 切换下一个窗口
-  local wins = vim.api.nvim_tabpage_list_wins(0)   -- 获取当前 tab 所有窗口
-  local cur = vim.api.nvim_get_current_win()       -- 当前窗口
-  for i, w in ipairs(wins) do
-    if w == cur then
-      vim.api.nvim_set_current_win(wins[i % #wins + 1])
-      return
-    end
-  end
-end, { desc = "Next window" })
-vim.keymap.set("n", "<C-k>", function() -- 切换上一个窗口
-  local wins = vim.api.nvim_tabpage_list_wins(0)
-  local cur = vim.api.nvim_get_current_win()
-  for i, w in ipairs(wins) do
-    if w == cur then
-      vim.api.nvim_set_current_win(wins[(i - 2) % #wins + 1])
-      return
-    end
-  end
-end, { desc = "Previous window" })
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Left Panel" }) -- panel切换
+vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Down Panel" })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Up Panel" })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Right Panel" })
+vim.keymap.set("n", "<S-h>", "<Cmd>BufferLineCyclePrev<CR>", { silent = true }) -- tab buffer切换
+vim.keymap.set("n", "<S-l>", "<Cmd>BufferLineCycleNext<CR>", { silent = true })
 vim.keymap.set("n", "<C-p>", function() -- 文件选择器
   require("snacks").picker.files()
 end, { desc = "Find Files (Ctrl+P)" })
-vim.keymap.set("n", "<C-f>", function() -- 文本查找器
+vim.keymap.set("n", "<C-f>", function() -- 全局文本查找器
   require("snacks").picker.grep()
 end, { desc = "Search text in project" })
 vim.keymap.set("n", "<leader>sd", function()

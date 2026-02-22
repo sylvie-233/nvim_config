@@ -41,10 +41,6 @@ return {
       api.tree.toggle({ focus = true })
     end, { noremap = true, silent = true })
 
-    vim.keymap.set("n", "<leader>fe", function()
-      api.tree.focus()       -- 直接把光标切换到 nvim-tree
-    end, { noremap = true, silent = true })
-
     -- 切换目录
     vim.keymap.set("n", "<leader>cd", function()
       local input = vim.fn.input("Enter path: ", vim.loop.cwd() .. "/", "dir")
