@@ -10,16 +10,16 @@ return {
     opts = {
       ensure_installed = {       -- 安装lsp
         "lua_ls",
-        "rust_analyzer",
         "pyright",
+        "ruff",
         "clangd",
         "cmake",
-        "gopls",
-        "ts_ls",
-        "omnisharp",
-        "ruff",
-        "jdtls",
-        "lemminx",                         -- xml lsp
+        "rust_analyzer",
+        -- "gopls",
+        -- "ts_ls",
+        -- "omnisharp",
+        -- "jdtls",
+        -- "lemminx",                         -- xml lsp
       },
       automatic_installation = true,       -- 开启自动安装
     },
@@ -29,14 +29,14 @@ return {
     config = function()
       require("mason-tool-installer").setup({
         ensure_installed = {
-          "java-test",
-          "java-debug-adapter",
+          -- "java-test",
+          -- "java-debug-adapter",
         },
       })
     end,
   },
-  {
-    "mfussenegger/nvim-jdtls",
-    ft = "java",
-  }
+  -- {
+  --   "mfussenegger/nvim-jdtls",
+  --   ft = "java",
+  -- }
 }
