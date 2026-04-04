@@ -15,9 +15,9 @@ return {
         "clangd",
         "cmake",
         "rust_analyzer",
+        "omnisharp",
         -- "gopls",
         -- "ts_ls",
-        -- "omnisharp",
         -- "jdtls",
         -- "lemminx",                         -- xml lsp
       },
