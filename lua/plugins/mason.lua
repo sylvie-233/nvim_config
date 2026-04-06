@@ -16,6 +16,7 @@ return {
         "cmake",
         "rust_analyzer",
         "omnisharp",
+        "powershell_es",
         -- "gopls",
         -- "ts_ls",
         -- "jdtls",
