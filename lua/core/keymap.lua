@@ -1,6 +1,9 @@
 -- 快捷键配置
 -- 基础快捷键
-vim.keymap.set("n", "<leader>t", "<cmd>ToggleTerm direction=float<cr>")
+-- vim.keymap.set("n", "<leader>t", "<cmd>ToggleTerm direction=float<cr>")
+vim.keymap.set("n", "<leader>t", function()
+  require("snacks").terminal.toggle()
+end)
 vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]])
 vim.keymap.set('t', 'jk', [[<C-\><C-n>]], { silent = true })
 vim.keymap.set('i', 'jk', '<Esc>', { silent = true })
