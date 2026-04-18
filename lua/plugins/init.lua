@@ -29,4 +29,5 @@ require("lazy").setup({
   { import = "plugins.mini_move" },      -- 代码移动
   { import = "plugins.nvim-comment" },   -- 代码注释
   { import = "plugins.nvim-autopairs" }, -- 括号匹配
+  { import = "plugins.toggleterm" },     -- 浮动终端
 })
