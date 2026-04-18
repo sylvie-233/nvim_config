@@ -8,10 +8,10 @@ return {
     },
     opts = {
       status = {
-        mode = { true },
-        command = { true },
-        search = { true },
-        message = { true },
+        mode = {},
+        command = {},
+        search = {},
+        message = {},
       },
       cmdline = {
         enabled = true,
@@ -110,15 +110,15 @@ return {
       sections = {
         lualine_a = { { "mode", right_padding = 2 } },
         lualine_b = {
-          "branch",   -- Git 分支
-          "diff",     -- Git 修改
+          "branch",     -- Git 分支
+          "diff",       -- Git 修改
           "diagnostics" -- 错误/警告
         },
         lualine_c = {
           {
             "filename",
             file_status = true, -- 显示修改标记
-            path = 0,         -- 只显示文件名
+            path = 0,           -- 只显示文件名
             symbols = {
               modified = "[+]",
               readonly = "[-]",
@@ -137,9 +137,9 @@ return {
 
         -- ✅ 右侧增强信息
         lualine_y = {
-          "encoding", -- 编码：utf-8
+          "encoding",   -- 编码：utf-8
           "fileformat", -- 文件格式：lf / crlf
-          "filetype", -- 文件类型
+          "filetype",   -- 文件类型
         },
         lualine_z = {
           { "progress" }, -- 百分比进度
