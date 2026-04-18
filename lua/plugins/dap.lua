@@ -12,7 +12,7 @@ return {
     "jay-babu/mason-nvim-dap.nvim",
   },
 
-  config = function()     -- 依赖gdb、debugpy模块
+  config = function() -- 依赖lldb、debugpy模块
     local dap = require("dap")
     local dapui = require("dapui")
 
@@ -76,16 +76,19 @@ return {
     end)
 
     -- C/C++配置
-    dap.adapters.gdb = {
-      type = "executable",
-      command = "gdb",
-      args = { "--interpreter=dap", },
+    dap.adapters.codelldb = {
+      type = "server",
+      port = "${port}",
+      executable = {
+        command = vim.fn.stdpath("data") .. "/mason/bin/codelldb.cmd",
+        args = { "--port", "${port}" },
+      },
     }
 
     dap.configurations.cpp = {
       {
-        name = "Debug current file (gdb)",
-        type = "gdb",
+        name = "Debug current file (codelldb)",
+        type = "codelldb",
         request = "launch",
 
         program = function()
@@ -107,8 +110,8 @@ return {
           return vim.fn.expand("%:p:h")
         end,
 
-        stopAtEntry = false,
-        externalConsole = false,
+        stopOnEntry = false,
+        runInTerminal = false,
       },
     }
 
