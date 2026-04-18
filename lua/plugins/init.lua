@@ -27,6 +27,6 @@ require("lazy").setup({
   { import = "plugins.bufferline" },     -- tab栏
   { import = "plugins.theme" },          -- 主题
   { import = "plugins.mini_move" },      -- 代码移动
-  { import = "plugins.nvim-comment" },   -- 代码注释
+  { import = "plugins.mini_comment" },   -- 代码注释
   { import = "plugins.nvim-autopairs" }, -- 括号匹配
 })
